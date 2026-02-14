@@ -55,15 +55,16 @@ export const PRIORITY_COLORS: Record<Priority, string> = {
   urgent: 'bg-red-500',
 };
 
+// Kept for backward compat but cards now use PRIORITY_COLORS dots
 export const PRIORITY_BORDER_COLORS: Record<Priority, string> = {
-  low: 'border-l-gray-500',
-  medium: 'border-l-blue-500',
-  high: 'border-l-orange-500',
-  urgent: 'border-l-red-500',
+  low: 'border-l-gray-400',
+  medium: 'border-l-blue-400',
+  high: 'border-l-orange-400',
+  urgent: 'border-l-red-400',
 };
 
 export const ASSIGNEE_STYLES: Record<Assignee, { label: string; className: string }> = {
-  jorge: { label: 'J', className: 'bg-blue-600 text-white' },
-  natasha: { label: 'N', className: 'bg-purple-600 text-white' },
-  both: { label: 'JN', className: 'bg-gradient-to-r from-blue-600 to-purple-600 text-white' },
+  jorge: { label: 'J', className: 'bg-blue-100 text-blue-700' },
+  natasha: { label: 'N', className: 'bg-purple-100 text-purple-700' },
+  both: { label: 'JN', className: 'bg-gradient-to-r from-blue-100 to-purple-100 text-purple-700' },
 };

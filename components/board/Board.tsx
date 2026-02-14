@@ -153,7 +153,7 @@ export function Board() {
         onDragOver={handleDragOver}
         onDragEnd={handleDragEnd}
       >
-        <div className="flex gap-4 p-4 overflow-x-auto h-[calc(100vh-60px)]">
+        <div className="flex gap-5 p-5 overflow-x-auto h-[calc(100vh-56px)]">
           {COLUMNS.map(column => (
             <Column
               key={column.id}

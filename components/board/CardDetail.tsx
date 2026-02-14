@@ -125,7 +125,7 @@ export function CardDetail({
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto bg-card">
+      <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto bg-card shadow-lg border-border/50">
         <DialogHeader className="pr-8">
           <div className="flex items-start gap-3">
             <span className="text-2xl">{TYPE_ICONS[card.type]}</span>

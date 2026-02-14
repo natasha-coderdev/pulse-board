@@ -27,10 +27,10 @@ export function Column({ id, title, cards, onCardClick, onAddCard }: ColumnProps
   return (
     <div className="flex flex-col w-[300px] min-w-[300px] max-h-full">
       {/* Header */}
-      <div className="flex items-center justify-between px-2 py-3">
-        <div className="flex items-center gap-2">
-          <h2 className="font-semibold text-foreground">{title}</h2>
-          <span className="text-xs text-muted-foreground bg-muted px-2 py-0.5 rounded-full">
+      <div className="flex items-center justify-between px-1 py-3">
+        <div className="flex items-center gap-2.5">
+          <h2 className="text-[13px] font-semibold text-foreground/80 uppercase tracking-wide">{title}</h2>
+          <span className="text-[11px] text-muted-foreground bg-muted/80 px-2 py-0.5 rounded-full font-medium">
             {cards.length}
           </span>
         </div>
@@ -40,8 +40,8 @@ export function Column({ id, title, cards, onCardClick, onAddCard }: ColumnProps
       <div
         ref={setNodeRef}
         className={cn(
-          'flex-1 overflow-y-auto px-2 pb-2 space-y-2 min-h-[100px] rounded-lg transition-colors',
-          isOver && 'bg-muted/50'
+          'flex-1 overflow-y-auto px-0.5 pb-2 space-y-2.5 min-h-[100px] rounded-lg transition-colors',
+          isOver && 'bg-muted/40'
         )}
       >
         <SortableContext items={cards.map(c => c.id)} strategy={verticalListSortingStrategy}>

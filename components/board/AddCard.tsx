@@ -62,32 +62,30 @@ export function AddCard({ columnId, onAdd }: AddCardProps) {
 
   if (!isOpen) {
     return (
-      <Button
-        variant="ghost"
-        size="sm"
+      <button
         onClick={() => setIsOpen(true)}
-        className="w-full justify-start text-muted-foreground hover:text-foreground"
+        className="w-full flex items-center gap-1.5 px-3 py-2 text-[13px] text-muted-foreground hover:text-foreground rounded-lg hover:bg-muted/50 transition-colors"
       >
-        <Plus className="w-4 h-4 mr-2" />
+        <Plus className="w-3.5 h-3.5" />
         Add card
-      </Button>
+      </button>
     );
   }
 
   return (
-    <div className="bg-card rounded-lg border border-border p-3 space-y-3">
+    <div className="bg-card rounded-lg border border-border/50 shadow-sm p-3 space-y-3">
       <Input
         autoFocus
         placeholder="Card title..."
         value={title}
         onChange={(e) => setTitle(e.target.value)}
         onKeyDown={handleKeyDown}
-        className="bg-background"
+        className="text-sm"
       />
       
       <div className="flex gap-2 flex-wrap">
         <Select value={type} onValueChange={(v) => setType(v as CardType)}>
-          <SelectTrigger className="w-[100px] h-8 text-xs">
+          <SelectTrigger className="w-[100px] h-7 text-xs">
             <SelectValue />
           </SelectTrigger>
           <SelectContent>
@@ -99,7 +97,7 @@ export function AddCard({ columnId, onAdd }: AddCardProps) {
         </Select>
 
         <Select value={priority} onValueChange={(v) => setPriority(v as Priority)}>
-          <SelectTrigger className="w-[100px] h-8 text-xs">
+          <SelectTrigger className="w-[100px] h-7 text-xs">
             <SelectValue />
           </SelectTrigger>
           <SelectContent>
@@ -111,7 +109,7 @@ export function AddCard({ columnId, onAdd }: AddCardProps) {
         </Select>
 
         <Select value={assignee} onValueChange={(v) => setAssignee(v as Assignee)}>
-          <SelectTrigger className="w-[90px] h-8 text-xs">
+          <SelectTrigger className="w-[90px] h-7 text-xs">
             <SelectValue />
           </SelectTrigger>
           <SelectContent>
@@ -127,16 +125,17 @@ export function AddCard({ columnId, onAdd }: AddCardProps) {
           size="sm"
           onClick={handleSubmit}
           disabled={!title.trim() || isSubmitting}
-          className="flex-1"
+          className="flex-1 h-8 text-xs"
         >
-          {isSubmitting ? 'Adding...' : 'Add'}
+          {isSubmitting ? 'Adding...' : 'Add card'}
         </Button>
         <Button
           size="sm"
           variant="ghost"
           onClick={() => setIsOpen(false)}
+          className="h-8"
         >
-          <X className="w-4 h-4" />
+          <X className="w-3.5 h-3.5" />
         </Button>
       </div>
     </div>
